@@ -10,16 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var trafficImage: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var startStopButton: UIButton!
+    
+    var startTimer = Timer()
+    var scoreTimer = Timer()
+    
+    var timeInt = 0
+    var scoreInt = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func startGame(_ sender: Any) {
     }
-
-
+    
 }
 

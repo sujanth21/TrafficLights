@@ -52,6 +52,9 @@
                                 <state key="normal" title="Start" backgroundImage="stopButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRZ-Nm-OIL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +75,11 @@
                             <constraint firstAttribute="bottom" secondItem="moK-Xr-YQH" secondAttribute="bottom" id="yGP-fY-qHT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="yC3-m8-PJL" id="FKa-jR-T5z"/>
+                        <outlet property="startStopButton" destination="YwF-D2-fdA" id="ksh-rU-1Hx"/>
+                        <outlet property="trafficImage" destination="c1V-BY-m85" id="AFx-6T-iNP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
