@@ -32,6 +32,15 @@ class ViewController: UIViewController {
             timeInt = 3
             trafficImage.image = UIImage(named: "trafficLight")
             startTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            
+            scoreLabel.text = String(scoreInt)
+            startStopButton.isEnabled = false
+            startStopButton.setTitle("", for: UIControlState.normal)
+        } else {
+            scoreTimer.invalidate()
+            scoreInt = 0
+            
+            startStopButton.setTitle("Restart", for: UIControlState.normal)
         }
     }
     
@@ -47,7 +56,17 @@ class ViewController: UIViewController {
         } else if timeInt == 0 {
             trafficImage.image = UIImage(named: "trafficLight1")
             startTimer.invalidate()
+            
+            scoreTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateScoreTimer), userInfo: nil, repeats: true)
+            
+            startStopButton.isEnabled = true
+            startStopButton.setTitle("Stop", for: UIControlState.normal)
         }
+    }
+    
+    @objc func updateScoreTimer() {
+        scoreInt += 1
+        scoreLabel.text = String(scoreInt)
     }
     
 }
